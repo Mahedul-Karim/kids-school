@@ -31,22 +31,25 @@ body {
   margin: 0 auto;
 }
 
-.btn{
+.btn {
   border: none;
   border-radius: 12px;
-  padding: 10px 38px;
+  padding: 10px 34px;
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
   background-color: transparent;
+  font-family: "Quicksand", sans-serif;
 }
 
-.bg-primary{
+.bg-primary {
   background-color: var(--color-primary);
 }
+.bg-black {
+  background-color: var(--color-dark);
+}
 
-
-.text-white{
+.text-white {
   color: var(--color-white);
 }
 .text-black {
@@ -67,7 +70,7 @@ body {
 
 /*=====================header styles=================*/
 
-.header{
+.header {
   padding-block: 10px;
 }
 
@@ -111,35 +114,111 @@ body {
   font-weight: 500;
 }
 
-.btn-icon{
+.btn-icon {
   display: none;
+}
+
+/*====================hero section===================*/
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-section > div:first-child {
+  flex-shrink: 0;
+}
+
+.hero-image img {
+  width: 100%;
+}
+
+.hero-content h1 {
+  font-size: 44px;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-block: 18px;
 }
 
 /*=========================responsive=================*/
 
+@media screen and (min-width: 1024px) {
+  .hero-section > div:first-child {
+    width: 55%;
+  }
+  .hero-section > div:nth-child(2) {
+    width: 45%;
+  }
+}
 
-@media screen and (max-width:768px){
+@media screen and (max-width: 1024px) {
+  /*====================hero section=============*/
+  .hero-content h1 {
+    font-size: 34px;
+  }
+  .hero-content p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /*=====================common====================*/
+  .btn {
+    font-size: 12px;
+  }
 
   /*========================header==================*/
 
-  .header{
+  .header {
     border-bottom: 1px solid var(--color-primary);
   }
 
-  .nav-logo > p{
+  .nav-logo > p {
     display: none;
   }
-  .nav-items{
-    display: none;
-  }
-
-  .nav-btn button:first-child{
+  .nav-items {
     display: none;
   }
 
-  .btn-icon{
+  .nav-btn button:first-child {
+    display: none;
+  }
+
+  .btn-icon {
     display: block;
     font-size: 26px;
   }
 
+  /*====================hero section=============*/
+
+  .hero-section {
+    margin-top: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+  .hero-content p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 648px) {
+  /*===================hero section=================*/
+
+  .hero-section {
+    flex-direction: column-reverse;
+  }
+
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
 }
