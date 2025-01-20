@@ -1,12 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
+:root {
+  --color-primary: #fea301;
+  --color-secondary: #01acfd;
+  --color-tertiary: #05d4df;
+  --color-quaternary: #5d58ef;
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  --color-dark: #111111;
+
+  --color-lime: #95b226;
+
+  --color-white: #ffffff;
 }
 
-body{
-    font-family: 'Quicksand',sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+/*===============common styles===============*/
+
+.container {
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.btn{
+  border: none;
+  border-radius: 12px;
+  padding: 10px 38px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.bg-primary{
+  background-color: var(--color-primary);
+}
+
+
+.text-white{
+  color: var(--color-white);
+}
+.text-black {
+  color: var(--color-dark);
+}
+.text-primary {
+  color: var(--color-primary);
+}
+.text-secondary {
+  color: var(--color-secondary);
+}
+.text-tertiary {
+  color: var(--color-tertiary);
+}
+.text-quaternary {
+  color: var(--color-quaternary);
+}
+
+/*=====================header styles=================*/
+
+.header{
+  padding-block: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.nav-logo p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-items li {
+  list-style: none;
+}
+
+.nav-items .nav-links {
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-items li:first-child a {
+  font-weight: bold;
+}
+
+.nav-items li:not(:first-child) {
+  font-weight: 500;
+}
+
+.btn-icon{
+  display: none;
+}
+
+/*=========================responsive=================*/
+
+
+@media screen and (max-width:768px){
+
+  /*========================header==================*/
+
+  .header{
+    border-bottom: 1px solid var(--color-primary);
+  }
+
+  .nav-logo > p{
+    display: none;
+  }
+  .nav-items{
+    display: none;
+  }
+
+  .nav-btn button:first-child{
+    display: none;
+  }
+
+  .btn-icon{
+    display: block;
+    font-size: 26px;
+  }
+
 }
