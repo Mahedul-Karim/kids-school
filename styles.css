@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   --color-primary: #fea301;
@@ -155,7 +156,8 @@ body {
 
 /*===================curriculum section==============*/
 
-.curriculum-section {
+.curriculum-section,
+.stories-section {
   background-image: url("assets/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -187,43 +189,142 @@ body {
   border: 1px solid var(--color-light-blue);
 }
 .curriculum-card:nth-child(2) {
-  background-image: linear-gradient(
-    #FFF4DC 0%,
-    var(--color-white) 40%
-  );
-  border: 1px solid #FFF4DC;
+  background-image: linear-gradient(#fff4dc 0%, var(--color-white) 40%);
+  border: 1px solid #fff4dc;
 }
 .curriculum-card:nth-child(3) {
-  background-image: linear-gradient(
-    #EEE1FF 0%,
-    var(--color-white) 40%
-  );
-  border: 1px solid #EEE1FF;
+  background-image: linear-gradient(#eee1ff 0%, var(--color-white) 40%);
+  border: 1px solid #eee1ff;
 }
 
-.curriculum-card > h3{
+.curriculum-card > h3 {
   font-size: 22px;
   font-weight: bold;
   color: #202020;
 }
 
-.curriculum-card > p{
+.curriculum-card > p {
   color: #808080;
   line-height: 1.6;
 }
 
-
-.btn-group{
+.btn-group {
   margin-top: 50px;
   text-align: center;
 }
 
-.btn-group button{
+.btn-group button {
   border-radius: 100%;
   width: 50px;
   height: 50px;
   padding: 0;
+  transition: background-color 500ms ease;
 }
+.btn-group button:hover {
+  background-color: rgba(254, 163, 1, 0.8);
+}
+
+/*================stories section================*/
+
+.stories-section {
+  background-image: url("assets/bg.png"),
+    linear-gradient(360deg, rgba(254, 163, 1, 0.3) 0%, var(--color-white) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-block: 40px;
+}
+
+.stories-cards {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.stories-cards-2nd {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.stories-card {
+  background-color: var(--color-white);
+  overflow: clip;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.stories-card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.stories-date {
+  font-family: "Raleway", serif;
+  max-width: max-content;
+  padding: 10px 14px;
+  border-radius: 48px;
+  font-weight: 500;
+  color: var(--color-white);
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.stories-cards > .stories-card:first-child .stories-date {
+  background-color: #3cd8e8;
+  margin-top: -45px;
+}
+
+.stories-card:nth-child(odd) .stories-date {
+  background-color: #95b226;
+}
+.stories-card:nth-child(even) .stories-date {
+  background-color: #5d58f0;
+}
+
+.stories-content {
+  padding: 20px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 5px;
+}
+
+.stories-cards > .stories-card:first-child .stories-content h4 {
+  font-size: 24px;
+  font-weight: bold;
+}
+.stories-cards > .stories-card:first-child .stories-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666666;
+  font-weight: 500;
+}
+
+.stories-cards-2nd .stories-card h4 {
+  line-height: 1.6;
+  font-weight: bold;
+}
+.stories-cards-2nd .stories-date {
+  margin-top: -40px;
+}
+
+
+.stories-action{
+  text-align: center;
+  margin-block: 40px;
+}
+
+/*========================footer section=============*/
+
+footer{
+  background-color: var(--color-secondary);
+}
+
 
 /*=========================responsive=================*/
 
@@ -238,11 +339,14 @@ body {
 
   /*======================curriculum section================*/
 
-  .curriculum-cards{
-    grid-template-columns: repeat(2,1fr);
+  .curriculum-cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-
+  /*stories section*/
+  .stories-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -302,16 +406,29 @@ body {
     text-align: center;
   }
 
-
   /*==================curriculum section===============*/
-  .curriculum-cards{
+  .curriculum-cards {
     grid-template-columns: 1fr;
   }
-  .btn-group{
+  .btn-group {
     display: none;
   }
-  .section-heading{
+  .section-heading {
     font-size: 26px;
   }
 
+  /*stories section*/
+  .stories-cards > .stories-card:first-child {
+    display: none;
+  }
+  .stories-content {
+    padding: 20px 5px 20px 10px;
+  }
+  .stories-date {
+    padding: 8px 12px;
+    font-size: 9px;
+  }
+  .stories-cards-2nd .stories-card h4 {
+    font-size: 12px;
+  }
 }
